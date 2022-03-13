@@ -123,6 +123,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &1854941352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1854941353}
+  - component: {fileID: 1854941354}
+  m_Layer: 0
+  m_Name: ObsitcleSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1854941353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854941352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.89, y: -3.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1854941354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854941352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee15fe63bf60e94b8e8ea9da364e0d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpawnTime: 2.27
+  minSpawnTime: 0.669
+  enemies:
+  - {fileID: 4347948444165077436, guid: 181d58e9ad67bdc4ead9886fb119505f, type: 3}
+  - {fileID: 1334109590283019914, guid: a0315d27bd2e2f044b3e9c451b2fa1e1, type: 3}
+  - {fileID: 2186477447320083126, guid: 3e548162445c3a34ca04ea6a2cff8af0, type: 3}
+  - {fileID: 7881422181945125170, guid: 77ff2e32e932f0944a26eca68d8d1c79, type: 3}
 --- !u!1001 &1837637285639279899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -304,10 +354,6 @@ PrefabInstance:
     - target: {fileID: 7282332281859676514, guid: 786e959c3320d7f4e95d71fd97ec3fac, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7282332281859676514, guid: 786e959c3320d7f4e95d71fd97ec3fac, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7282332281859676515, guid: 786e959c3320d7f4e95d71fd97ec3fac, type: 3}
       propertyPath: m_RootOrder
