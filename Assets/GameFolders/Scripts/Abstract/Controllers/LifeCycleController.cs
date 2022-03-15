@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UdemyprojectTutorialBerk1.Controllers
+namespace UdemyprojectTutorialBerk1.Abstract.Controllers
 {
-    public class EnemyController : MonoBehaviour
+    public abstract class LifeCycleController : MonoBehaviour
     {
         [SerializeField] float maxLifeTime = 5f;
 
@@ -20,3 +20,4 @@ namespace UdemyprojectTutorialBerk1.Controllers
         }
     }
 }
+

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UdemyprojectTutorialBerk1.Combat;
 using UdemyprojectTutorialBerk1.Movements;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace UdemyprojectTutorialBerk1.Controllers
         Rigidbody2D _rigidbody2D;
         Jump _jump;
         PcInputControlller _input;
+        LaunchProjectile _launchProjectile;
         bool _isLeftMouseClicked;
 
       
@@ -39,6 +41,7 @@ namespace UdemyprojectTutorialBerk1.Controllers
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _jump = GetComponent<Jump>();
+            _launchProjectile = GetComponent<LaunchProjectile>();
             _input = new PcInputControlller();
         }
         private void Update()
@@ -46,6 +49,10 @@ namespace UdemyprojectTutorialBerk1.Controllers
             if (_input.LeftMouseClikDown)
             {
                 _isLeftMouseClicked = true;
+            }
+            if (_input.RightMouseClickDown)
+            {
+                _launchProjectile.LaunchAction();
             }
         }
         private void FixedUpdate()
@@ -57,6 +64,10 @@ namespace UdemyprojectTutorialBerk1.Controllers
             }
         }
         private void OnCollisionEnter2D(Collision2D collision)
+        {
+            GameManager.Instance.RestartGame();
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
         {
             GameManager.Instance.RestartGame();
         }
