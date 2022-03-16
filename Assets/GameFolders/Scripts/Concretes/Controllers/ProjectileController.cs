@@ -13,6 +13,7 @@ namespace UdemyprojectTutorialBerk1.Controllers
 
             if (enemy != null)
             {
+                GameManager.Instance.IncreaseScore();
                 Destroy(enemy.gameObject);
                 Destroy(this.gameObject);
             }

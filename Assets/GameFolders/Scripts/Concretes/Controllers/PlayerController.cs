@@ -63,14 +63,7 @@ namespace UdemyprojectTutorialBerk1.Controllers
                 _isLeftMouseClicked = false;
             }
         }
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            GameManager.Instance.RestartGame();
-        }
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            GameManager.Instance.RestartGame();
-        }
+        
     }
 }
 
