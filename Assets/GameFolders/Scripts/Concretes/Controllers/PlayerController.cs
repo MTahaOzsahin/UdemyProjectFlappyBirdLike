@@ -13,6 +13,7 @@ namespace UdemyprojectTutorialBerk1.Controllers
         Jump _jump;
         PcInputControlller _input;
         LaunchProjectile _launchProjectile;
+        AudioSource _audioSource;
         bool _isLeftMouseClicked;
 
       
@@ -42,6 +43,7 @@ namespace UdemyprojectTutorialBerk1.Controllers
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _jump = GetComponent<Jump>();
             _launchProjectile = GetComponent<LaunchProjectile>();
+            _audioSource = GetComponent<AudioSource>();
             _input = new PcInputControlller();
         }
         private void Update()
@@ -60,6 +62,7 @@ namespace UdemyprojectTutorialBerk1.Controllers
             if (_isLeftMouseClicked)
             {
                 _jump.JumpAction(_rigidbody2D);
+                _audioSource.Play();
                 _isLeftMouseClicked = false;
             }
         }

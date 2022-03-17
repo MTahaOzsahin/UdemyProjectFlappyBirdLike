@@ -17,7 +17,8 @@ namespace UdemyprojectTutorialBerk1.Movements
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
-        private void Start()
+        
+        private void OnEnable()
         {
             _rigidbody2D.velocity = SelectNewDirection() * moveSpeed;
         }

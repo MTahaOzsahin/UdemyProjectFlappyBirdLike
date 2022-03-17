@@ -8,16 +8,18 @@ namespace UdemyprojectTutorialBerk1.Abstract.Controllers
     {
         [SerializeField] float maxLifeTime = 5f;
 
-        float _currentTime;
+        protected float _currentTime;
 
         private void Update()
         {
             _currentTime += Time.deltaTime;
             if (_currentTime > maxLifeTime)
             {
-                Destroy(this.gameObject);
+                KillGameObject();
             }
         }
+
+        public abstract void KillGameObject();
     }
 }
 

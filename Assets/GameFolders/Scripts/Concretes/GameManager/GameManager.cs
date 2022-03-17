@@ -1,4 +1,5 @@
 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] int score;
     public static GameManager Instance { get; private set; }
+
+    
 
     public event System.Action<int> OnScoreChanged; 
 
@@ -36,14 +39,28 @@ public class GameManager : MonoBehaviour
         OnScoreChanged!.Invoke(score);   
         //OnScoreChanged(score); böylede yazýlabilir sanýrým
     }
-    public void RestartGame()
+    public void StartGame()
     {
         score = 0;
-        StartCoroutine(RestartGameAsync());
+        StartCoroutine(StartGameAsync());
         Time.timeScale = 1f;
     }
-    IEnumerator RestartGameAsync()
+    IEnumerator StartGameAsync()
     {
         yield return SceneManager.LoadSceneAsync("Game");
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+    public void ReturnMenu()
+    {
+        StartCoroutine(ReturnMenuAsync());
+    }
+
+    public IEnumerator ReturnMenuAsync()
+    {
+        yield return SceneManager.LoadSceneAsync("Menu");
     }
 }
