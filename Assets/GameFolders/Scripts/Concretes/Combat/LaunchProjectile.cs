@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UdemyprojectTutorialBerk1.Abstract.Spawners;
 using UdemyprojectTutorialBerk1.Controllers;
+using UdemyprojectTutorialBerk1.Pools;
 using UnityEngine;
 
 namespace UdemyprojectTutorialBerk1.Combat
@@ -29,13 +31,18 @@ namespace UdemyprojectTutorialBerk1.Combat
         {
             if (_canLaunch)
             {
-                ProjectileController newProjectile = 
+                //EnemyController poolProjectile = ProjectilePool.Instance.Get();
+                //poolProjectile.transform.position = this.transform.position;
+                //poolProjectile.gameObject.SetActive(true);
+                ProjectileController newProjectile =
                     Instantiate(projectilePrefab, projectileTransform.position, projectileTransform.transform.rotation,transform);
 
-               
+
                 _canLaunch = false;
             }
         }
+
+        
     }
 }
 

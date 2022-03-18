@@ -14,6 +14,7 @@ namespace UdemyprojectTutorialBerk1.Controllers
         PcInputControlller _input;
         LaunchProjectile _launchProjectile;
         AudioSource _audioSource;
+        Death _death;
         bool _isLeftMouseClicked;
 
       
@@ -44,10 +45,13 @@ namespace UdemyprojectTutorialBerk1.Controllers
             _jump = GetComponent<Jump>();
             _launchProjectile = GetComponent<LaunchProjectile>();
             _audioSource = GetComponent<AudioSource>();
+            _death = GetComponent<Death>();
             _input = new PcInputControlller();
         }
         private void Update()
         {
+            if (_death.IsDead) return;
+
             if (_input.LeftMouseClikDown)
             {
                 _isLeftMouseClicked = true;
@@ -55,6 +59,7 @@ namespace UdemyprojectTutorialBerk1.Controllers
             if (_input.RightMouseClickDown)
             {
                 _launchProjectile.LaunchAction();
+
             }
         }
         private void FixedUpdate()

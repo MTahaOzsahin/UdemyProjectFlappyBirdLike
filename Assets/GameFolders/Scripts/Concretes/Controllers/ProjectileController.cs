@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UdemyprojectTutorialBerk1.Abstract.Controllers;
+using UdemyprojectTutorialBerk1.Pools;
 using UnityEngine;
 
 namespace UdemyprojectTutorialBerk1.Controllers
@@ -14,16 +15,18 @@ namespace UdemyprojectTutorialBerk1.Controllers
             if (enemy != null)
             {
                 GameManager.Instance.IncreaseScore();
-                Destroy(enemy.gameObject);
-                Destroy(this.gameObject);
+
+
                 KillGameObject();
             }
+            enemy.KillGameObject();
         }
 
         public override void KillGameObject()
         {
             Destroy(this.gameObject);
         }
+        
     }
 }
 
